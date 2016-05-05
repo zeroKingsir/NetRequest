@@ -8,7 +8,9 @@
 
 #import "ViewController.h"
 #import "BaseHttpClient.h"
-#define URL @"http://10.0.8.8/sns/my/user_list.php"
+#import "NSString+URLEncoding.h"
+//#define PATH @"http://123.56.189.59/englishStudy/queryMoviesbyName?"
+#define PATH @"http://123.56.189.59/englishStudy/queryMoviesbyName?info=%7B%22movieName%22:%22%E7%9A%84%22%7D%20"
 @interface ViewController ()
 
 @end
@@ -25,20 +27,28 @@
     //2.设置中心点
     activity.center = self.view.center;
     
-    
     //3.设置样式
-    activity.activityIndicatorViewStyle =
-    UIActivityIndicatorViewStyleGray;
-    
-    
+    activity.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
     
     [self.view addSubview:activity];
     
     [activity startAnimating];
     
+//    NSDictionary *info = [[NSMutableDictionary alloc] init];
+//    
+//    [info setValue:@"的" forKey:@"movieName"];
+    
+    
+    //http://123.56.189.59/englishStudy/queryMoviesbyName?info={"movieName":"的"}
+    NSString *URL = @"http://123.56.189.59/englishStudy/queryMoviesbyName?info={\"movieName\":\"的\"}";//-->\解决双引号引用问题
+    NSString * encodedString = CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)URL, NULL, (CFStringRef)@"'\'", kCFStringEncodingUTF8));
+    NSString *str = [NSString stringWithContentsOfURL:[NSURL URLWithString:encodedString] encoding:NSUTF8StringEncoding error:nil];
+    NSLog(@"%@",str);
+
     [BaseHttpClient httpType:GET andUrl:URL andParam:nil andSuccessBlock:^(NSURL *url, id data) {
         
         [activity stopAnimating];
+        
         NSLog(@"%@",data);
         
     } andFailBlock:^(NSURL *url, NSError *error) {

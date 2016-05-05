@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		819A47451CDB43E800F7E2EB /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 819A47441CDB43E800F7E2EB /* NSString+URLEncoding.m */; };
 		81CA81ED1CCE49D100F0F9A0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 81CA81EC1CCE49D100F0F9A0 /* main.m */; };
 		81CA81F01CCE49D100F0F9A0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 81CA81EF1CCE49D100F0F9A0 /* AppDelegate.m */; };
 		81CA81F31CCE49D100F0F9A0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81CA81F21CCE49D100F0F9A0 /* ViewController.m */; };
@@ -54,6 +55,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		819A47431CDB43E800F7E2EB /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
+		819A47441CDB43E800F7E2EB /* NSString+URLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncoding.m"; sourceTree = "<group>"; };
 		81CA81E81CCE49D000F0F9A0 /* NetRequest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetRequest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81CA81EC1CCE49D100F0F9A0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		81CA81EE1CCE49D100F0F9A0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -137,6 +140,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		819A47421CDB43E800F7E2EB /* 不合法字符串 */ = {
+			isa = PBXGroup;
+			children = (
+				819A47431CDB43E800F7E2EB /* NSString+URLEncoding.h */,
+				819A47441CDB43E800F7E2EB /* NSString+URLEncoding.m */,
+			);
+			path = "不合法字符串";
+			sourceTree = "<group>";
+		};
 		81CA81DF1CCE49D000F0F9A0 = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +172,7 @@
 		81CA81EA1CCE49D100F0F9A0 /* NetRequest */ = {
 			isa = PBXGroup;
 			children = (
+				819A47421CDB43E800F7E2EB /* 不合法字符串 */,
 				81CA82291CCE4BFC00F0F9A0 /* AFNetworking */,
 				81CA82221CCE4AED00F0F9A0 /* 封装网络请求类 */,
 				81CA81EE1CCE49D100F0F9A0 /* AppDelegate.h */,
@@ -422,6 +435,7 @@
 				81CA82281CCE4B2200F0F9A0 /* BaseHttpClient.m in Sources */,
 				81CA81ED1CCE49D100F0F9A0 /* main.m in Sources */,
 				81CA82521CCE4BFC00F0F9A0 /* AFHTTPSessionManager.m in Sources */,
+				819A47451CDB43E800F7E2EB /* NSString+URLEncoding.m in Sources */,
 				81CA825A1CCE4BFC00F0F9A0 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				81CA82591CCE4BFC00F0F9A0 /* AFNetworkActivityIndicatorManager.m in Sources */,
 			);
@@ -647,6 +661,7 @@
 				81CA82171CCE49D100F0F9A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		81CA82181CCE49D100F0F9A0 /* Build configuration list for PBXNativeTarget "NetRequestTests" */ = {
 			isa = XCConfigurationList;
@@ -655,6 +670,7 @@
 				81CA821A1CCE49D100F0F9A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		81CA821B1CCE49D100F0F9A0 /* Build configuration list for PBXNativeTarget "NetRequestUITests" */ = {
 			isa = XCConfigurationList;
@@ -663,6 +679,7 @@
 				81CA821D1CCE49D100F0F9A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
